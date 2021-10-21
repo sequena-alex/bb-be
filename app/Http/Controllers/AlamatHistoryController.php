@@ -36,6 +36,20 @@ class AlamatHistoryController extends Controller
     public function store(Request $request)
     {
         //
+        $alamatHistory = new alamatHistory;
+        $alamatHistory->playerCount = $request->playerCount;
+        $alamatHistory->adminFunds = $request->adminFunds;
+        $alamatHistory->playerPondo = $request->playerPondo;
+        $alamatHistory->totalProfit = $request->totalProfit;
+        $alamatHistory->totalOverBet = $request->totalOverBet;
+        $alamatHistory->alamat = $request->alamat;
+        $alamatHistory->currentAlamat = $request->currentAlamat;
+        $alamatHistory->lastAlamat = $request->lastAlamat;
+        $alamatHistory->lastSubmittedString = $request->lastSubmittedString;
+        $alamatHistory->lastSubmittedResults = $request->lastSubmittedResults;
+        $alamatHistory->save();
+
+        return $alamatHistory;
     }
 
     /**
@@ -81,5 +95,10 @@ class AlamatHistoryController extends Controller
     public function destroy(alamatHistory $alamatHistory)
     {
         //
+    }
+
+    public function latestAlamat(){
+        $alamat = alamatHistory::latest('created_at')->first();
+        return $alamat;
     }
 }

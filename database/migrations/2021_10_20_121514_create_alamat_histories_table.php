@@ -21,6 +21,10 @@ class CreateAlamatHistoriesTable extends Migration
             $table->integer("totalProfit");
             $table->integer("totalOverBet");
             $table->integer("alamat");
+            $table->integer("currentAlamat");
+            $table->integer("lastAlamat");
+            $table->longtext("lastSubmittedString");
+            $table->longtext("lastSubmittedResults");
             $table->timestamps();
         });
     }

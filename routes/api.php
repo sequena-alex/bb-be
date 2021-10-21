@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AlamatHistoryController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,11 +19,5 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::get('/getHistory', function () {
-    return "History";
-});
-
-
-Route::post('/createHistory', function () {
-    
-});
+Route::get('/getHistory', [AlamatHistoryController::class, 'latestAlamat']);;
+Route::post('/createHistory', [AlamatHistoryController::class, 'store']);;
