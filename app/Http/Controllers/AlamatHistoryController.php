@@ -15,6 +15,8 @@ class AlamatHistoryController extends Controller
     public function index()
     {
         //
+        $history = alamatHistory::orderBy('created_at', 'DESC')->get();
+        return $history;
     }
 
     /**
@@ -47,6 +49,7 @@ class AlamatHistoryController extends Controller
         $alamatHistory->lastAlamat = $request->lastAlamat;
         $alamatHistory->lastSubmittedString = $request->lastSubmittedString;
         $alamatHistory->lastSubmittedResults = $request->lastSubmittedResults;
+        $alamatHistory->dutyProfit = $request->dutyProfit;
         $alamatHistory->save();
 
         return $alamatHistory;

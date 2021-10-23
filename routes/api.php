@@ -19,5 +19,6 @@ use App\Http\Controllers\AlamatHistoryController;
 // });
 
 
-Route::get('/getHistory', [AlamatHistoryController::class, 'latestAlamat']);;
-Route::post('/createHistory', [AlamatHistoryController::class, 'store']);;
+Route::get('/getHistory', [AlamatHistoryController::class, 'latestAlamat']);
+Route::get('/getHistories', [AlamatHistoryController::class, 'index']);
+Route::post('/createHistory', [AlamatHistoryController::class, 'store']);

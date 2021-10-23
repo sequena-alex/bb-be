@@ -23,6 +23,7 @@ class CreateAlamatHistoriesTable extends Migration
             $table->integer("alamat");
             $table->integer("currentAlamat");
             $table->integer("lastAlamat");
+            $table->integer("dutyProfit");
             $table->longtext("lastSubmittedString");
             $table->longtext("lastSubmittedResults");
             $table->timestamps();
